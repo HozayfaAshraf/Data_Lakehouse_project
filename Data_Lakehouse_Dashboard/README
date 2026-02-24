@@ -1,0 +1,58 @@
+# E-Commerce Sales & Operations Analytics: PySpark to Power BI
+
+## 📌 Introduction
+Welcome to my end-to-end Data Engineering and Business Intelligence portfolio project. The goal of this project was to take raw, messy e-commerce data (CSV files) and transform it into a fully interactive, enterprise-grade Power BI dashboard. 
+
+This project demonstrates a complete data pipeline: extracting and cleaning data using PySpark (Medallion Architecture), modeling the data into a clean Star Schema, and surfacing high-level business insights using advanced DAX and custom visual interactions in Power BI.
+
+## 🛠️ Skills Showcase
+This project highlights a complete end-to-end workflow, blending backend data engineering with advanced frontend Business Intelligence techniques:
+
+**Data Engineering (PySpark & Databricks)**
+* **Data Transformation:** Cleaned raw CSV data, handled missing values, and flattened complex product hierarchies (Medallion Architecture).
+* **Historical Tracking:** Designed and implemented Slowly Changing Dimensions (SCD Type 2) to track historical manufacturing costs over time (`prd_start_dt`, `prd_end_dt`).
+
+**Data Modeling (Power BI)**
+* **Star Schema Design:** Architected a highly optimized Star Schema integrating 1 Fact table (`fact_sales`) and multiple Dimension tables (`dim_customer`, `dim_product`).
+* **Relationship Management:** Configured strict 1-to-many, single-direction relationships to ensure accurate data filtering and prevent ambiguous data paths.
+
+**DAX & Calculations (Power BI)**
+* **Row-Level Context & Lookups:** Utilized `SUMX` and `RELATED()` to bridge dimension attributes (like product cost) into the fact table for accurate, row-by-row profit calculations.
+* **Dynamic Categorization:** Wrote custom calculated columns using `DATEDIFF` and `SWITCH(TRUE())` to dynamically bucket continuous data (birthdates) into categorical variables (Age Groups).
+
+**Data Visualization & UI/UX (Power BI)**
+* **Advanced Interactivity:** Configured Edit Interactions to isolate slicer cross-filtering (allowing specific charts to ignore global filters).
+* **Analytical Filtering:** Implemented Top N Filtering to automatically surface the top-performing products by profit.
+* **User Experience (UX):** Designed a seamless, multi-page application utilizing Action Buttons for page navigation, custom formatting (dynamic currency and decimals), and applied Data Storytelling principles by framing visual titles as direct business questions.
+
+---
+
+## 📊 Dashboard Overview
+The Power BI application is divided into two distinct, highly interactive pages to serve different business audiences.
+
+### Page 1: Customer & Market Overview (Executive Summary)
+*Designed for C-suite executives to quickly understand "Who is buying, and where?"*
+
+* **The KPIs:** Instant visibility into Total Revenue, Total Profit, Total Customers, and Total Countries.
+* **Geographic & Temporal Trends:** Answers "Which regions drive our highest revenue?" (Horizontal Bar Chart) and "How are our overall sales trending over time?" (Line Chart).
+* **Customer Persona Building:** Features custom DAX engineering to group raw birthdates into analytical Age Brackets. It visually answers, "Which age group and gender drives the most revenue?" 
+* **Seamless Navigation:** Includes a custom button to seamlessly transition the user to the underlying product data.
+
+
+![Page 1 - Executive Summary](/images/page1.png)
+
+### Page 2: Product & Operations Deep-Dive
+*Designed for Product Managers and Supply Chain teams to analyze profitability and operational burdens.*
+
+* **The Profit Leaderboard:** Uses a dynamic Top 10 filter to instantly answer, "Which 10 specific products generate the most profit?"
+* **The Engineering Flex (SCD Type 2):** An interactive line chart with isolated slicer interactions that answers, "How has a specific product's manufacturing cost changed historically?" This directly proves the success of the PySpark SCD Type 2 backend logic.
+* **The Maintenance Burden:** A donut chart that reveals the stark reality: "How reliant is our profit on high-maintenance items?" (Highlighting that 98% of profit is tied to maintenance-heavy bikes).
+* **The Hidden Gems:** A focused matrix answering, "Which zero-maintenance products are our hidden gems?" identifying highly profitable items that require zero post-sale support.
+
+
+![Page 2 - Product Deep-Dive](/images/page2.png)
+
+---
+
+## 💡 Conclusion
+This project successfully bridges the gap between raw data and actionable business strategy. By transforming unstructured files into a structured Star Schema and building a tailored BI interface, this dashboard allows business leaders to easily identify that while "Bikes" drive the vast majority of revenue, there are clear demographic trends and low-maintenance "hidden gem" products that represent massive opportunities for future growth.
