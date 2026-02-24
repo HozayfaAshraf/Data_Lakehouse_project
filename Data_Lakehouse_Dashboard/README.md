@@ -1,4 +1,4 @@
-# E-Commerce Sales & Operations Analytics: PySpark to Power BI
+E-Commerce Sales & Operations Analytics: PySpark to Power BI
 
 ## 📌 Introduction
 Welcome to my end-to-end Data Engineering and Business Intelligence portfolio project. The goal of this project was to take raw, messy e-commerce data (CSV files) and transform it into a fully interactive, enterprise-grade Power BI dashboard. 
