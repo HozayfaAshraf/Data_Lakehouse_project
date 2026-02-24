@@ -38,7 +38,7 @@ The Power BI application is divided into two distinct, highly interactive pages 
 * **Customer Persona Building:** Features custom DAX engineering to group raw birthdates into analytical Age Brackets. It visually answers, "Which age group and gender drives the most revenue?" 
 * **Seamless Navigation:** Includes a custom button to seamlessly transition the user to the underlying product data.
 
-![Page 1 - Executive Summary](/images/page1)
+![Page 1 - Executive Summary](images/page1.png)
 
 ### Page 2: Product & Operations Deep-Dive
 *Designed for Product Managers and Supply Chain teams to analyze profitability and operational burdens.*
@@ -48,7 +48,7 @@ The Power BI application is divided into two distinct, highly interactive pages 
 * **The Maintenance Burden:** A donut chart that reveals the stark reality: "How reliant is our profit on high-maintenance items?" (Highlighting that 98% of profit is tied to maintenance-heavy bikes).
 * **The Hidden Gems:** A focused matrix answering, "Which zero-maintenance products are our hidden gems?" identifying highly profitable items that require zero post-sale support.
 
-![Page 2 - Product Deep-Dive](/images/page2)
+![Page 2 - Product Deep-Dive](images/page2.png)
 
 ---
 
