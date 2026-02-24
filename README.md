@@ -1,5 +1,7 @@
 # ⚙️ Automated E-Commerce Data Pipeline: Databricks & PySpark
 
+![Project Design](images/lakehouse.drawio.png)
+
 ## 📌 Project Overview
 This project showcases a robust, fully automated Data Engineering ETL pipeline built in Databricks. The primary objective was to architect a reliable system that ingests raw e-commerce data, transforms it using distributed processing (PySpark), and orchestrates the workflow with built-in monitoring and failure alerting. 
 
@@ -12,8 +14,7 @@ While the data is ultimately served to a Power BI dashboard for business consump
 ### 1. Data Ingestion (Databricks Volumes)
 The pipeline begins by landing raw, unstructured e-commerce data (CSV files) securely into **Databricks Unity Catalog Volumes**. This serves as our secure landing zone and the starting point for the Bronze layer of our Medallion architecture.
 
-*(**Image Instruction for Hozayfa:** Place your screenshot of the Databricks Volume showing the raw files here)*
-![Databricks Volume - Landing Zone](images/databricks_volume.png)
+![Databricks Volume - Landing Zone](images/workpace.png)
 
 ### 2. Data Transformation (PySpark)
 I developed modular PySpark scripts to process the data through the Medallion stages:
@@ -26,14 +27,13 @@ To ensure the pipeline runs without manual intervention, I packaged the PySpark 
 * Configured task dependencies (e.g., the Silver layer processing will not trigger until the Bronze ingestion completes successfully).
 * Scheduled the pipeline to run on an automated trigger to keep the downstream data warehouse fresh.
 
-*(**Image Instruction for Hozayfa:** Place your screenshot of the Databricks Job DAG or Run History here)*
-![Databricks Workflow Automation](images/databricks_job.png)
+![Databricks Workflow Automation](images/lakehousejob.png)
 
 ### 4. Monitoring & Alerting
 Data reliability is critical. I configured Databricks Job notifications to immediately alert stakeholders in the event of a pipeline failure. This ensures that data quality issues or cluster failures are caught and addressed before impacting business reporting.
 
 *(**Image Instruction for Hozayfa:** Place your screenshot of the failure email notification here)*
-![Job Failure Email Alert](images/email_alert.png)
+![Job Failure Email Alert](images/email.png)
 
 ---
 
@@ -43,8 +43,9 @@ The fully transformed, Gold-layer tables are securely connected to Power BI via 
 * Features a clean 1-to-many Star Schema.
 * Surfaces dynamic KPIs for C-suite executives and operational metrics for Supply Chain managers.
 
-*(**Image Instruction for Hozayfa:** Place ONE screenshot of your best Power BI page here)*
-![Final Power BI Dashboard](images/powerbi_dashboard.png)
+![Final Power BI Dashboard](Data_Lakehouse_Dashboard/images/page1.png)
+
+MORE INFO IN DATA_LAKEHOUSE_DASHBOARD FOLDER
 
 ---
 
